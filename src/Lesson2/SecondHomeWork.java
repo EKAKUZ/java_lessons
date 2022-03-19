@@ -15,7 +15,7 @@ public class SecondHomeWork {
         else System.out.println("Ошибка");
 
         System.out.println ("Пример 2. Задача на switch");
-        int oper1 = 77, oper2 = 67, oper = 9;
+        int oper1 = 77, oper2 = 0, oper = 9;
         switch (oper) {
             case 3:
                 System.out.println("Сумма: " + (oper1 + oper2));
@@ -27,7 +27,9 @@ public class SecondHomeWork {
                 System.out.println("Умножение: " + oper1 * oper2);
                 break;
             case 9:
-                System.out.println("Деление: " + (double) oper1 / oper2);
+                if (oper2 != 0) {
+                    System.out.println("Деление: " + (double) oper1 / oper2);
+                } else  System.out.println("Ошибка деления на 0");
                 break;
             default:
                 System.out.println("Операций не производилось");
