@@ -61,7 +61,7 @@ public class SecondLesson {
             else if (state == 1) System.out.println("Открытие приложения");
             else System.out.println("Ошибка статуса");
 
-            int month = 13;
+            int month = 3;
 
             if (month == 1 || month == 2 || month == 12) System.out.println("Зима");
             else if (month < 6) System.out.println("Весна");
@@ -71,40 +71,24 @@ public class SecondLesson {
 
             switch (month) {
                 case 1:
-                    System.out.println("Зима");
-                    break;
                 case 2:
+                case 12:
                     System.out.println("Зима");
                     break;
                 case 3:
-                    System.out.println("Весна");
-                    break;
                 case 4:
-                    System.out.println("Весна");
-                    break;
                 case 5:
                     System.out.println("Весна");
                     break;
                 case 6:
-                    System.out.println("Лето");
-                    break;
                 case 7:
-                    System.out.println("Лето");
-                    break;
                 case 8:
                     System.out.println("Лето");
                     break;
                 case 9:
-                    System.out.println("Осень");
-                    break;
                 case 10:
-                    System.out.println("Осень");
-                    break;
                 case 11:
                     System.out.println("Осень");
-                    break;
-                case 12:
-                    System.out.println("Зима");
                     break;
                 default:
                     System.out.println("Ошибка");
