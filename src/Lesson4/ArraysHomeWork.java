@@ -107,7 +107,6 @@ public class ArraysHomeWork {
         double[] doubleOtr = new double[a];
 
         for (double element : doubles5) {
-
             if (element < 0) {
                 doubleOtr[i] = element;
                 i += 1;
