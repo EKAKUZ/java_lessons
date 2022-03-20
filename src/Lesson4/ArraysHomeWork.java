@@ -20,6 +20,7 @@ public class ArraysHomeWork {
 
         int[] ints1 = new int [N];
 
+        // Вариант 1
         for (int i = 0; i < ints1.length; i += 1) {
             ints1[i] = (int) (Math.random()*2000 - 1000);
             if (i == 0) {
@@ -32,29 +33,39 @@ public class ArraysHomeWork {
                 average += ints1[i];
             }
         }
-        average =average / N;
+        average =average / ints1.length;
         System.out.println(Arrays.toString(ints1));
         System.out.println("Максимальное значение: " + max);
         System.out.println("Минимальное значение: " + min);
         System.out.println("Среднее значение: " + average);
 
+        // Вариант 2
+        for (int i = 0; i < ints1.length; i += 1) {
+            ints1[i] = (int) (Math.random()*2000 - 1000);
+            average += ints1[i];
+        }
+        Arrays.sort (ints1);
+        System.out.println(Arrays.toString(ints1));
+        System.out.println("Максимальное значение: " + ints1[ints1.length - 1]);
+        System.out.println("Минимальное значение: " + ints1[0]);
+        System.out.println("Среднее значение: " + average);
+
 
         System.out.println ("Пример 2");
         int start = 2, stop =20;
-        N = (stop - start) / 2 + 1;
 
-        int[] ints2 = new int[N];
+        int[] ints2 = new int[(stop - start) / 2 + 1];
 
-        for (int i = 0, j = start; i < N; i += 1, j += 2) {
+        for (int i = 0, j = start; i < ints2.length; i += 1, j += 2) {
             ints2[i] = j;
         }
         System.out.println(Arrays.toString(ints2));
 
-        for (int i = N-1; i >= 0 ; i -= 1) {
-            System.out.println(ints2[i]);
+        for (int i = ints2.length - 1; i >= 0 ; i -= 1) {
+            System.out.print(ints2[i] + " ");
         }
 
-        System.out.println ("Пример 3");
+        System.out.println ("\nПример 3");
         int[] ints3 = {-1, 1, 0, 0, 1, 1, -1, 0, 1, 1, -1};
         System.out.println(Arrays.toString(ints3));
 
@@ -92,6 +103,9 @@ public class ArraysHomeWork {
                 j += 1;
             }
         }
+        Arrays.sort(intChet);
+        Arrays.sort(intNeChet);
+
         System.out.println(Arrays.toString(ints4));
         System.out.println(Arrays.toString(intChet));
         System.out.println(Arrays.toString(intNeChet));
