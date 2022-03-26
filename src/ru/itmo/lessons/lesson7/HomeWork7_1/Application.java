@@ -1,6 +1,5 @@
 package ru.itmo.lessons.lesson7.HomeWork7_1;
 
-import ru.itmo.lessons.lesson7.HomeWork7_1.base.Unit;
 
 public class Application {
     public static void main(String[] args) {
