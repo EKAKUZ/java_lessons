@@ -41,7 +41,7 @@ public class Application {
         System.out.println(author1.getFullName());
         System.out.println(author2.getFullName());
 
-        Book book1 = new Book();
+        Book book1 = new Book(author1);
         // book1.title = ""; // проверка внутри класса
         // book1.pageCount= -34; // проверка внутри класса
         book1.setTitle("Книга");
@@ -54,8 +54,9 @@ public class Application {
         shelf.addBook(book1,book1, book1); //книги в методе собируться в массив в локальную переменную books
         // вывод имени автора первой книги на полке
         // Book book2 = new Book(author2); ???
-        //System.out.println(shelf.books[0].author.name); или
-        //System.out.println(shelf.books[0].author.getAuthor());
+        System.out.println(author1);
+        System.out.println(book1);
+        System.out.println(shelf);
     }
 }
 

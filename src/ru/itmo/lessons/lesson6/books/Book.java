@@ -21,6 +21,15 @@ public class Book {
         setTitle(title);
     }
 
+    public String toString() {
+
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", pageCount='" + pageCount + '\'' +
+                '}';
+    }
+
     // методы, позволяющие установить значения свойств
     // со всеми необходимыми проврками - сеттеры
 

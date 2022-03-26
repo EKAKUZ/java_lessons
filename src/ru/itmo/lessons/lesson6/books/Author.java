@@ -17,6 +17,13 @@ public class Author {
         // используется в void для прерывание работы метода - return;
     };
 
+    public String toString() {
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
+    }
+
     public String getAuthor() {
         return name;
     }

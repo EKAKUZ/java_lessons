@@ -7,6 +7,14 @@ public class Shelf {
     private String color = "белый"; // цвет полки
     public Book[] books = new Book[10]; // книгb
 
+    @Override
+    public String toString() {
+        return "Shelf{" +
+                "color='" + color + '\'' +
+                ", books=" + Arrays.toString(books) +
+                '}';
+    }
+
      // метод давления одной книги на полку
     private void addBook(Book book) {
         for (int i = 0; i < books.length; i++) {
