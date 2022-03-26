@@ -20,11 +20,10 @@ public class Application {
         school2.addTeaher(new Teacher("Тамара Романовна", 25, "Русский язык",20));
         school2.addTeaher(new Teacher("Екатерина Сергеевна", 35, "Математика",25));
         school2.addTeaher(new Teacher("Александр Романович", 27, "Физика", 30));
-        school2.addStudent(new Student("Тамара", 12, "Русский язык"));
+        school2.addStudent(new Student("Тамара", 12, "Русский язык",  0));
         school2.addStudent(new Student("Сергей", 13, "Математика", 5));
-        Student student3 = new Student("Александр", 17, "Физкультура");
+        Student student3 = new Student("Александр", 17, "Физкультура",10);
 
-        student3.setKnowledgeLevel(10);
         System.out.println(student3);
         school2.addStudent(student3);
 
