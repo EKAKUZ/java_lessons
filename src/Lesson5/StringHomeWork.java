@@ -52,7 +52,7 @@ public class StringHomeWork {
         System.out.println ("Пример 4");
         System.out.println("Введите полиндром");
         StringBuilder str4 = new StringBuilder();
-        str4.append(scanner.nextLine());
+        str4.append(scanner.nextLine().replaceAll(" ", ""));
         StringBuilder invertStr = str4.reverse();
          if (str4.toString().equalsIgnoreCase(invertStr.toString()))  System.out.println("Вы ввели полиндром");
          else System.out.println("Вы ввели не полиндром");

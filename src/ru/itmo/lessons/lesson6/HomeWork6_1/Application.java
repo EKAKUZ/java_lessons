@@ -52,6 +52,7 @@ public class Application {
             if (climbmas[i] == null) {
                 System.out.println("Введите имя альпиниста " + (i + 1));
                 str = scanner.nextLine();
+
                 //if (str.equalsIgnoreCase("exit")) break;
                 if (str.length() > 2) {
                     climbmas[i] = new Climber();
@@ -63,6 +64,7 @@ public class Application {
             if (climbmas[i]  != null && climbmas[i].getAddr() == null) {
                 System.out.println("Введите адрес альпиниста " + (i + 1));
                 str = scanner.nextLine();
+
                 //if (str.equalsIgnoreCase("exit")) break;
                 if (str.length() > 4) {
                     climbmas[i].setAddr(str);
@@ -75,7 +77,7 @@ public class Application {
 
         // заполняем группы альпинистами
         for (int i = 0; i < groups.length; i++) {
-            groups[i].climbers = new Climber[3];
+            groups[i].countClimber(3);
         }
         for (int j = 0; j < climbmas.length; j += 3) {
             for (int i = 0; i < groups.length; i += 1) {
@@ -93,9 +95,7 @@ public class Application {
             System.out.println("Набор в группу " + gr.active);
             System.out.println("На гору " + gr.mountain.getName() + ", " + gr.mountain.getCountry() + ", " + gr.mountain.getHeight());
             System.out.println("Альпинисты: ");
-            for (Climber climb: gr.climbers) {
-                if (climb != null) System.out.println(climb.getName() + " " + climb.getAddr());
-            }
+            System.out.println(gr.printClimberName());
         }
 
     }

@@ -1,9 +1,23 @@
 package ru.itmo.lessons.lesson6.HomeWork6_1.climbing;
 
+import ru.itmo.lessons.lesson6.HomeWork6_2.Foods.Food;
+
 public class Group {
     public boolean active = true; // true - набор открыт
-    public Climber[] climbers;
+    private Climber[] climbers;
     public Mountain mountain;
+
+    public void countClimber(int count) {
+        climbers = new Climber[count];
+    }
+
+    public String printClimberName() {
+        StringBuilder sb = new StringBuilder();
+        for (Climber climb: climbers) {
+            if (climb != null) sb = sb.append(" ").append(climb.getName()).append(" ").append(climb.getAddr());
+        }
+        return sb.toString();
+    }
 
     public void addClimber(Climber climber) {
         if (!active) throw new IllegalArgumentException("Набор в группу закрыт");
