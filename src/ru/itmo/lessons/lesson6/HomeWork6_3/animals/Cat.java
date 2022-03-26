@@ -36,7 +36,7 @@ public class Cat {
         return weight;
     }
 
-    public void catchMouse (Mouse mouse, Cat cats[]) {
+    public void catchMouse (Mouse mouse, Cat... cats) {
         for(Cat cat:  cats) {
             if (cat != null) {
                 for (Mouse ms: cat.mouses) {
@@ -95,9 +95,9 @@ public class Cat {
 
     public String cetchedMouse() {
         StringBuilder sb = new StringBuilder("Кот ");
-        sb = sb.append(name).append(" поймал мышей со скоростью: ");
+        sb.append(name).append(" поймал мышей со скоростью: ");
         for (Mouse ms: mouses) {
-            if (ms != null) sb = sb.append(ms.getSpeed()).append(" ");
+            if (ms != null) sb.append(ms.getSpeed()).append(" ");
         }
         return sb.toString();
     }
