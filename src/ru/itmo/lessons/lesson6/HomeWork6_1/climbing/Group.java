@@ -14,7 +14,7 @@ public class Group {
     public String printClimberName() {
         StringBuilder sb = new StringBuilder();
         for (Climber climb: climbers) {
-            if (climb != null) sb = sb.append(" ").append(climb.getName()).append(" ").append(climb.getAddr());
+            if (climb != null) sb.append(" ").append(climb.getName()).append(" ").append(climb.getAddr());
         }
         return sb.toString();
     }
@@ -29,6 +29,5 @@ public class Group {
                 return;
             }
         }
-        return;
     }
 }
