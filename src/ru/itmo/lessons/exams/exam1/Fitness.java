@@ -119,7 +119,7 @@ public class Fitness {
 
         for(Ticket ticket : ticketsArr) {
             if (ticket == null) break;
-            str.append(ticket.getOwner().FullName());
+            str.append(ticket.getOwner().fullName());
             str.append("; ");
         }
         return str.toString();
@@ -131,7 +131,7 @@ public class Fitness {
         if (area == Area.GYM) str = "тренажерный зал";
         else if (area == Area.GROUP) str = "групповые занятия";
         else if (area == Area.SWIMPOOL) str = "бассейн";
-        System.out.println(ticket.getOwner().FullName() + " " + str);
+        System.out.println(ticket.getOwner().fullName() + " " + str);
         System.out.println(LocalDate.now() + " " + LocalTime.now());
     }
 }

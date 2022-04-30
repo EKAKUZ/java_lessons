@@ -22,7 +22,7 @@ public class Owner {
         this.year = year;
     }
 
-    public String FullName() {
+    public String fullName() {
         return name + " " + surname;
     }
 
