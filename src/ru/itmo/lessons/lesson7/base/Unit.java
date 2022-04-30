@@ -36,5 +36,5 @@ public abstract class Unit {
         System.out.println("Метод Unit");
     }
 
-    //public abstract void rest();
+    public abstract void rest();
 }

@@ -7,7 +7,10 @@ package ru.itmo.lessons.lesson7.base;
 //Unit - родительский класс (супер класс)
 //BattleUnit  - наследник класса
 
-public abstract class BattleUnit extends Unit {
+import ru.itmo.lessons.lesson7.Infantry;
+import ru.itmo.lessons.lesson7.Knight;
+
+public abstract class BattleUnit extends Unit implements AttackAble {
     protected int attackScore;
     public BattleUnit(int healthScore, int attackScore) {
         super(healthScore); // если в родительском классе есть конструктор, он обязательно дб в дочернем
@@ -19,27 +22,16 @@ public abstract class BattleUnit extends Unit {
         return attackScore;
     }
 
-    public void battleUnitVoid(){
+    public final void battleUnitVoid(){
         System.out.println("Метод BattleUnit");
     }
-
-}
-
-
-/* public class BattleUnit extends Unit implements AttackAble {
-
-
-    public  int getAttackScore () {return attackScore; }
-
-    // переопределить final метод нельзя
-    public final void battleUnitVoid() { System.out.println("Метод battleUnitVoid");}
 
     public boolean runFromField(){
         if (!isAlive()) {
             System.out.println("Юнит умер");
             return false;
         }
-        healthScore -=1;
+        minusHealth(1); // так или с минусом?
         if (!isAlive()) {
             System.out.println("Юнит не смог сбежать с поля боя");
             return false;
@@ -48,6 +40,7 @@ public abstract class BattleUnit extends Unit {
         return true;
         //при бегстве Unit теряет 1 ед здоровья
     }
+
 
     public static BattleUnit getBattleUnit() {
         String [] types = {"knight", "infantry"};
@@ -66,7 +59,7 @@ public abstract class BattleUnit extends Unit {
     public static BattleUnit[] getBattleUnits (int count) {
         BattleUnit[] units = new BattleUnit[count];
 
-        for (int i = 0; i < units.lenght; i++) {
+        for (int i = 0; i < units.length; i++) {
             // в статических методах можно обратиться
             // только к статическим методам или свойствам класса
             units[i] = getBattleUnit();
@@ -75,4 +68,4 @@ public abstract class BattleUnit extends Unit {
     }
     //iter для генерации foreach
 
-}*/
+}
