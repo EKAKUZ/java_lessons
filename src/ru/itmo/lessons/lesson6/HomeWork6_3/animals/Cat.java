@@ -14,7 +14,7 @@ public class Cat {
         setWeight (weight);
     }
     public void setName (String name) {
-        if (name == null || name == "" ) throw new IllegalArgumentException ("Некорректное имя кота null или пустое");
+        if (name == null || name.equalsIgnoreCase("") ) throw new IllegalArgumentException ("Некорректное имя кота null или пустое");
         this.name = name;
     }
     public void setSpeed (int speed) {

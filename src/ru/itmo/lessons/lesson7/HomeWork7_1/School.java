@@ -21,7 +21,7 @@ public class School {
     }
 
     public School(String title, Director director, Teacher[] teachers, Student[] students) {
-        if (title == null || title.length()<0)
+        if (title == null || title.length()==0)
             throw new IllegalArgumentException("Ошибка создания экзепляра школа, некорректное название");
         if (director == null) throw new IllegalArgumentException("Школа не может функционировать без директора");
         if (teachers == null) throw new IllegalArgumentException("В школе должны быть учителя");

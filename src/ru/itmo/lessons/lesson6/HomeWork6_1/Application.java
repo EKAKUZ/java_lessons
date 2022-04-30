@@ -82,7 +82,7 @@ public class Application {
         for (int j = 0; j < climbmas.length; j += 3) {
             for (int i = 0; i < groups.length; i += 1) {
                 if (climbmas.length  > j + i) {
-                    if (groups[i].active) {
+                    if (groups[i].isActive()) {
                         groups[i].addClimber(climbmas[i + j]);
                     } else System.out.println("Набор в группу закрыт");
 
@@ -92,7 +92,7 @@ public class Application {
 
         // результат
         for (Group gr: groups) {
-            System.out.println("Набор в группу " + gr.active);
+            System.out.println("Набор в группу " + gr.isActive());
             System.out.println("На гору " + gr.mountain.getName() + ", " + gr.mountain.getCountry() + ", " + gr.mountain.getHeight());
             System.out.println("Альпинисты: ");
             System.out.println(gr.printClimberName());

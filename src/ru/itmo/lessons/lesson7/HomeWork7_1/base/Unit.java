@@ -1,5 +1,7 @@
 package ru.itmo.lessons.lesson7.HomeWork7_1.base;
 
+import java.util.Arrays;
+
 public abstract class Unit {
     protected String name;
     protected int age;
@@ -19,6 +21,8 @@ public abstract class Unit {
     public void setAge(int age) {
         if (age < 1) throw new IllegalArgumentException("Возраст не может быть отрицательным");
         this.age = age;
+
+        // Arrays.fill("массив", "чем заполнить");
     }
 
 }

@@ -3,12 +3,16 @@ package ru.itmo.lessons.lesson6.HomeWork6_1.climbing;
 import ru.itmo.lessons.lesson6.HomeWork6_2.Foods.Food;
 
 public class Group {
-    public boolean active = true; // true - набор открыт
+    private boolean active = true; // true - набор открыт - без доступа из вне
     private Climber[] climbers;
     public Mountain mountain;
 
     public void countClimber(int count) {
         climbers = new Climber[count];
+    }
+
+    public boolean isActive() {
+        return active;
     }
 
     public String printClimberName() {
