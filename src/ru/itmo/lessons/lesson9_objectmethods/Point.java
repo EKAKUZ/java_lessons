@@ -1,4 +1,4 @@
-package ru.itmo.lessons.lesson9_objectmetods;
+package ru.itmo.lessons.lesson9_objectmethods;
 
 import java.util.Objects;
 
