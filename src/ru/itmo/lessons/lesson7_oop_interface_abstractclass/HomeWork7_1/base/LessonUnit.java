@@ -1,4 +1,4 @@
-package ru.itmo.lessons.lesson7.HomeWork7_1.base;
+package ru.itmo.lessons.lesson7_oop_interface_abstractclass.HomeWork7_1.base;
 
 public abstract class LessonUnit extends Unit {
     protected String lessonName;

@@ -1,6 +1,6 @@
-package ru.itmo.lessons.lesson7.HomeWork7_1;
+package ru.itmo.lessons.lesson7_oop_interface_abstractclass.HomeWork7_1;
 
-import ru.itmo.lessons.lesson7.HomeWork7_1.base.LessonUnit;
+import ru.itmo.lessons.lesson7_oop_interface_abstractclass.HomeWork7_1.base.LessonUnit;
 
 public class Student extends LessonUnit {
     private int knowledgeLevel;

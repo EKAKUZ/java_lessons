@@ -1,4 +1,4 @@
-package ru.itmo.lessons.lesson7.base;
+package ru.itmo.lessons.lesson7_oop_interface_abstractclass.base;
 
 public abstract class Unit {
     protected int healthScore; // Доступ осуществляется из текущего класса или дочерних классов

@@ -1,6 +1,4 @@
-package ru.itmo.lessons.lesson7.HomeWork7_1.base;
-
-import java.util.Arrays;
+package ru.itmo.lessons.lesson7_oop_interface_abstractclass.HomeWork7_1.base;
 
 public abstract class Unit {
     protected String name;

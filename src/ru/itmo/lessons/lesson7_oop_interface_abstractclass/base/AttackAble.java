@@ -1,4 +1,4 @@
-package ru.itmo.lessons.lesson7.base;
+package ru.itmo.lessons.lesson7_oop_interface_abstractclass.base;
 
 // нельзя создать экземпляры
 // нет ни конструкторов, ни свойств

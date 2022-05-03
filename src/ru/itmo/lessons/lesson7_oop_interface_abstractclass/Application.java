@@ -1,7 +1,7 @@
-package ru.itmo.lessons.lesson7;
+package ru.itmo.lessons.lesson7_oop_interface_abstractclass;
 
-import ru.itmo.lessons.lesson7.base.BattleUnit;
-import ru.itmo.lessons.lesson7.base.Unit;
+import ru.itmo.lessons.lesson7_oop_interface_abstractclass.base.BattleUnit;
+import ru.itmo.lessons.lesson7_oop_interface_abstractclass.base.Unit;
 
 import java.util.Scanner;
 

@@ -1,8 +1,7 @@
-package ru.itmo.lessons.lesson7;
+package ru.itmo.lessons.lesson7_oop_interface_abstractclass;
 
 //import ru.itmo.lessons.lessons7.base.AttackAble;
-import ru.itmo.lessons.lesson7.base.AttackAble;
-import ru.itmo.lessons.lesson7.base.BattleUnit;
+import ru.itmo.lessons.lesson7_oop_interface_abstractclass.base.BattleUnit;
 //  import ru.itmo.lessons.lessons7.base.Unit;
 
 public final class Knight extends BattleUnit   {

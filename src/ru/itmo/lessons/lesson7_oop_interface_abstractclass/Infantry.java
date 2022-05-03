@@ -1,8 +1,8 @@
-package ru.itmo.lessons.lesson7;
+package ru.itmo.lessons.lesson7_oop_interface_abstractclass;
 
 //import ru.itmo.lessons.lessons7.base.AttackAble;
 //import ru.itmo.lessons.lessons7.base.Unit;
-import ru.itmo.lessons.lesson7.base.BattleUnit;
+import ru.itmo.lessons.lesson7_oop_interface_abstractclass.base.BattleUnit;
 
 public final class Infantry extends BattleUnit{
     private final int additionalAttack = 5;

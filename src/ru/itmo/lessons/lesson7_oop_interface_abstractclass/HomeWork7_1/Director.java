@@ -1,6 +1,6 @@
-package ru.itmo.lessons.lesson7.HomeWork7_1;
+package ru.itmo.lessons.lesson7_oop_interface_abstractclass.HomeWork7_1;
 
-import ru.itmo.lessons.lesson7.HomeWork7_1.base.Unit;
+import ru.itmo.lessons.lesson7_oop_interface_abstractclass.HomeWork7_1.base.Unit;
 
 public class Director extends Unit{
     public Director (String name, int age) {

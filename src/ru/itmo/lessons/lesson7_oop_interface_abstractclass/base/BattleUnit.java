@@ -1,4 +1,4 @@
-package ru.itmo.lessons.lesson7.base;
+package ru.itmo.lessons.lesson7_oop_interface_abstractclass.base;
 //abstract - не можем создать обьект на основе этого класса  и можем разместить в нем абстрактные методы
 //import ru.itmo.lessons.lessons7.Infantry;
 //import ru.itmo.lessons.lessons7.Knight;
@@ -7,8 +7,8 @@ package ru.itmo.lessons.lesson7.base;
 //Unit - родительский класс (супер класс)
 //BattleUnit  - наследник класса
 
-import ru.itmo.lessons.lesson7.Infantry;
-import ru.itmo.lessons.lesson7.Knight;
+import ru.itmo.lessons.lesson7_oop_interface_abstractclass.Infantry;
+import ru.itmo.lessons.lesson7_oop_interface_abstractclass.Knight;
 
 public abstract class BattleUnit extends Unit implements AttackAble {
     protected int attackScore;
