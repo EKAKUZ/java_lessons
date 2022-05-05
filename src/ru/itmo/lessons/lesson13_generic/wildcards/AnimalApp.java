@@ -24,7 +24,7 @@ public class AnimalApp {
         PairContainer<Integer, ? super T> to){
         /* предположим, что T - Animal
         * тогда ? extends T тип Animal и его потомки Cat и Dog
-        * ? T - тип Animal и все его предки, т.е. Object*/
+        * ? super T - тип Animal и все его предки, т.е. Object*/
         to.setValue(from.getValue());
     }
 }

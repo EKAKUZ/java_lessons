@@ -51,7 +51,7 @@ public class Application {
 
         Shelf shelf = new Shelf();
         shelf.addBook(book1);
-        shelf.addBook(book1,book1, book1); //книги в методе собируться в массив в локальную переменную books
+        shelf.addBook(book1,book1,book1); //книги в методе собируться в массив в локальную переменную books
         // вывод имени автора первой книги на полке
         // Book book2 = new Book(author2); ???
         System.out.println(author1);
