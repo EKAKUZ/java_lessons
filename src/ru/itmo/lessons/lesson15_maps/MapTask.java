@@ -1,23 +1,26 @@
 package ru.itmo.lessons.lesson15_maps;
 
 import java.util.*;
-
+//HashMap TreeMap LinkedHashMap EnumMap
 public class MapTask {
-    public static ArrayList<String> createListLogin(HashMap<String,String> firstTaskMap, String city){
+    public static List<String> createListLogin(Map<String, String> firstTaskMap, String city){
         if (firstTaskMap ==null || city == null) throw new IllegalArgumentException();
-        ArrayList<String> arrayListLogin = new ArrayList<>();
+        List<String> arrayListLogin = new ArrayList<>();
         for (Map.Entry<String, String> pair: firstTaskMap.entrySet()) {
             if (pair.getValue().equalsIgnoreCase(city)) {
                 arrayListLogin.add(pair.getKey());
             }
         }
         return arrayListLogin;
+
     }
-    public static HashMap<String, Integer> sameWordCount (List<String>  words) {
-        HashMap<String, Integer> hashMap = new HashMap<>();
+    public static Map<String, Integer> sameWordCount (List<String>  words) {
+        Map<String, Integer> hashMap = new HashMap<>();
         for (String word : words) {
-            if (hashMap.containsKey(word)) hashMap.replace(word, hashMap.get(word) + 1);
-            else hashMap.put(word, 1);
+            /*if (hashMap.containsKey(word)) hashMap.replace(word, hashMap.get(word) + 1);
+            else hashMap.put(word, 1);*/
+            int count = hashMap.getOrDefault(word,0);
+            hashMap.put(word, count + 1);
         }
         return hashMap;
     }
@@ -35,6 +38,18 @@ public class MapTask {
             System.out.println("Некорректные параметры метода");
             return -1;
         }
+        /*
+        "It     is a uncover long established fact that a reader will be distracted uncover by the readable content of a page " +
+                "when looking at its layout The point of using uncover Lorem Ipsum is that sites it has a more-or-less normal distribution of letters" +
+                "as uncover opposed to still using Content here humour uncover content here making it look like readable English Many desktop publishing " +
+                "packages and web page editors now use Lorem Ipsum as their default model text and a search for lorem ipsum will " +
+                "uncover many web sites still uncover in their infancy Various versions uncover have evolved over the years uncover sometimes by accident" +
+                " sometimes on purpose injected humour and the like";
+         */
+        //String[] words = text.replaceAll("  ", " ").toLowerCase().split(" ");
+        //System.out.println(Arrays.toString(words));
+//[it, , , is, a, uncover, long, established, fact, that, a, reader, will, be, distracted, uncover, by, the, readable, content, of, a, page, when, looking, at, its, layout, the, point, of, using, uncover, lorem, ipsum, is, that, sites, it, has, a, more-or-less, normal, distribution, of, lettersas, uncover, opposed, to, still, using, content, here, humour, uncover, content, here, making, it, look, like, readable, english, many, desktop, publishing, packages, and, web, page, editors, now, use, lorem, ipsum, as, their, default, model, text, and, a, search, for, lorem, ipsum, will, uncover, many, web, sites, still, uncover, in, their, infancy, various, versions, uncover, have, evolved, over, the, years, uncover, sometimes, by, accident, sometimes, on, purpose, injected, humour, and, the, like]
+
         int count = 0;
         while (text.contains("  ")) {
             text = text.replaceAll("  ", " ");
@@ -47,8 +62,8 @@ public class MapTask {
         System.out.println(Arrays.toString(words));
     return count;
     }
-    public static HashMap<Integer, List<String>> generateWordGroup (String text) {
-        HashMap<Integer, List<String>> hashMap = new HashMap<>();
+    public static Map<Integer, Set<String>> generateWordGroup (String text) {
+        Map<Integer, Set<String>> hashMap = new HashMap<>();
         if (text == null ) {
             System.out.println("Некорректные параметры метода");
             return hashMap;
@@ -59,7 +74,7 @@ public class MapTask {
         String[] words = text.split(" ");
 
         for (String word : words) {
-            List<String> l = hashMap.getOrDefault(word.length(), new ArrayList<>());
+            Set<String> l = hashMap.getOrDefault(word.length(), new HashSet<>());
             l.add(word);
             hashMap.put(word.length(), l);
         }
@@ -74,33 +89,41 @@ public class MapTask {
         while (text.contains("  ")) {
             text = text.replaceAll("  ", " ");
         }
-        String[] words = text.split(" ");
+        String[] words = text.toLowerCase().split(" ");
 
         HashMap<String, Integer> hashMap = new HashMap<>();
         for (String word : words) {
-            int count = hashMap.getOrDefault(word, 0);
-            count ++;
-            hashMap.put(word, count);
+            hashMap.put(word,  hashMap.getOrDefault(word, 0) +1);
         }
         System.out.println(hashMap);
 
-        Comparator<Map.Entry<String,Integer>> Comparator1 = new CountComparator()
+        /*Comparator<Map.Entry<String,Integer>> comparator = new CountComparator()
                 .thenComparing(new WordComparator());
-        TreeSet<Map.Entry<String,Integer>> treeSet2 = new TreeSet<>(Comparator1);
+        TreeSet<Map.Entry<String,Integer>> treeSet = new TreeSet<>(comparator);
 
         for (Map.Entry<String, Integer> pair : hashMap.entrySet()) {
-            if (treeSet2.size()< 10) treeSet2.add(pair);
+            if (treeSet.size()< 10) treeSet.add(pair);
             else {
-                if (treeSet2.first().getValue()< pair.getValue()) {
-                    treeSet2.remove(treeSet2.first());
-                    treeSet2.add(pair);
+                if (treeSet.last().getValue()< pair.getValue()) {
+                    treeSet.remove(treeSet.last());
+                    treeSet.add(pair);
                 }
             }
         }
-        System.out.println(treeSet2);
+        System.out.println(treeSet);
 
-        for (Map.Entry<String, Integer> entry : treeSet2) {
+        for (Map.Entry<String, Integer> entry : treeSet) {
             System.out.println(entry.getKey());
+        }*/
+
+        ArrayList<Map.Entry<String,Integer>> arrayList = new ArrayList<>(hashMap.entrySet());
+        System.out.println(arrayList);
+
+        arrayList.sort(new CountComparator());
+        System.out.println(arrayList);
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(arrayList.get(i).getKey());
         }
     }
 
@@ -160,7 +183,7 @@ public class MapTask {
         //  3. написать метод, который выводит в консоль топ 10 самых частых слов
 
         // в тексте содержатся только буквы и пробельные символы
-        String text = "It is a uncover long established fact that a reader will be distracted uncover by the readable content of a page " +
+        String text = "It     is a uncover long established fact that a reader will be distracted uncover by the readable content of a page " +
                 "when looking at its layout The point of using uncover Lorem Ipsum is that sites it has a more-or-less normal distribution of letters" +
                 "as uncover opposed to still using Content here humour uncover content here making it look like readable English Many desktop publishing " +
                 "packages and web page editors now use Lorem Ipsum as their default model text and a search for lorem ipsum will " +
@@ -178,7 +201,7 @@ class CountComparator implements Comparator<Map.Entry<String,Integer>> {
     @Override
     public int compare(Map.Entry<String,Integer> o1, Map.Entry<String,Integer> o2) {
 
-        return Integer.compare(o1.getValue(), o2.getValue());
+        return Integer.compare(o2.getValue(), o1.getValue());
     }
 }
 class WordComparator implements Comparator<Map.Entry<String,Integer>> {
@@ -188,17 +211,3 @@ class WordComparator implements Comparator<Map.Entry<String,Integer>> {
         return o1.getKey().compareTo(o2.getKey());
     }
 }
-/*
-{reader=1, use=1, evolved=1, sometimes=2, sites=2, when=1, years=1, that=2, lorem=1, injected=1, model=1, has=1, text=1, Ipsum=2, publishing=1, Various=1, readable=2, using=2, still=2, making=1, like=2, in=1, its=1, is=2, infancy=1, uncover=9, it=2, packages=1, look=1, as=1, at=1, versions=1, Content=1, ipsum=1, looking=1, page=2, lettersas=1, here=2, fact=1, be=1, purpose=1, for=1, their=2, It=1, distribution=1, long=1, content=2, point=1, accident=1, The=1, default=1, search=1, desktop=1, more-or-less=1, web=2, and=3, by=2, of=3, humour=2, now=1, have=1, Many=1, editors=1, on=1, established=1, over=1, a=5, normal=1, opposed=1, will=2, distracted=1, many=1, the=3, layout=1, English=1, Lorem=2, to=1}
-[Content=1, English=1, It=1, Many=1, The=1, Various=1, accident=1, as=1, at=1, be=1, default=1, desktop=1, distracted=1, distribution=1, editors=1, established=1, evolved=1, fact=1, for=1, has=1, have=1, in=1, infancy=1, injected=1, ipsum=1, its=1, layout=1, lettersas=1, long=1, look=1, looking=1, lorem=1, making=1, many=1, model=1, more-or-less=1, normal=1, now=1, on=1, opposed=1, over=1, packages=1, point=1, publishing=1, purpose=1, reader=1, search=1, text=1, to=1, use=1, versions=1, when=1, years=1, Ipsum=2, Lorem=2, by=2, content=2, here=2, humour=2, is=2, it=2, like=2, page=2, readable=2, sites=2, sometimes=2, still=2, that=2, their=2, using=2, web=2, will=2, and=3, of=3, the=3, a=5, uncover=9]
-uncover
-a
-the
-of
-and
-will
-web
-using
-their
-that
- */

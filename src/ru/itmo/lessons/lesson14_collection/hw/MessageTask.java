@@ -7,7 +7,7 @@ import java.util.*;
 
 public class MessageTask {
     public static void countEachPriority(List<Message> messageList) {
-        for (MessagePriority msgPriority : MessagePriority.values()) {
+        /*for (MessagePriority msgPriority : MessagePriority.values()) {
             int count = 0;
             for (Message msg : messageList) {
                 if (msg.getPriority() == msgPriority) {
@@ -15,9 +15,14 @@ public class MessageTask {
                 }
             }
             System.out.println(msgPriority + ": " + count);
-        }
+        }*/
         // TODO:  Подсчитать количество сообщений для каждого приоритета
         //  Ответ в консоль
+        int[] counts =new int[MessagePriority.values().length];
+        for (Message message: messageList){
+            counts[message.getPriority().ordinal()] ++;
+        }
+        System.out.println(Arrays.toString(counts));
     }
 
     public static void countEachCode(List<Message> messageList) { //ЕСЛИ ЭТУ ЗАДАЧУ НЕ РАЗБИРАЛИ - СПРОСИТЬ
@@ -41,25 +46,28 @@ public class MessageTask {
     }
 
     public static void uniqueMessageCount(List<Message> messageList) {
-        List<Message> uniqMsg = new ArrayList<>();
+        /*List<Message> uniqMsg = new ArrayList<>();
         for (Message msg : messageList) {
             if (!uniqMsg.contains(msg)) uniqMsg.add(msg);
         }
-        System.out.println("Найдено " + uniqMsg.size() + " уникальных сообщений");
+        System.out.println("Найдено " + uniqMsg.size() + " уникальных сообщений");*/
+        System.out.println(new HashSet<>(messageList).size());
         // TODO: Подсчитать количество уникальных сообщений
         //  Ответ в консоль
     }
 
     public static List<Message> uniqueMessagesInOriginalOrder(List<Message> messageList) {
-        List<Message> uniqMsg = new ArrayList<>();
+        /*List<Message> uniqMsg = new ArrayList<>();
         for (Message msg : messageList) {
             if (!uniqMsg.contains(msg)) uniqMsg.add(msg);
         }
+        return uniqMsg;*/
         // TODO: вернуть только неповторяющиеся сообщения и в том порядке,
         //  в котором они встретились в первоначальном списке
         //  Например, было: [{URGENT, 4}, {HIGH, 9}, {LOW, 3}, {HIGH, 9}]
         //  на выходе: [{URGENT, 4}, {HIGH, 9}, {LOW, 3}]
-        return uniqMsg;
+
+        return new ArrayList<>(new LinkedHashSet<>(messageList));
     }
 
     public static void removeEach(List<Message> messageList, MessagePriority priority) {
