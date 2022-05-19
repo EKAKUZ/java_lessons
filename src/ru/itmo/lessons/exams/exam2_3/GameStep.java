@@ -1,4 +1,4 @@
-package ru.itmo.lessons.exams.exam2_2;
+package ru.itmo.lessons.exams.exam2_3;
 
 import java.io.*;
 import java.util.Arrays;

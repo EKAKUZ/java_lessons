@@ -1,8 +1,7 @@
-package ru.itmo.lessons.exams.exam2_2.Pattern.Command;
+package ru.itmo.lessons.exams.exam2_3.Pattern.Command;
 
-import ru.itmo.lessons.exams.exam2_2.GameStep;
-import ru.itmo.lessons.exams.exam2_2.Pattern.ExecutorMenu;
-import ru.itmo.lessons.exams.exam2_2.Pattern.ReceiverMenu;
+import ru.itmo.lessons.exams.exam2_3.Pattern.ExecutorMenu;
+import ru.itmo.lessons.exams.exam2_3.Pattern.ReceiverMenu;
 
 public class CommandExit implements ExecutorMenu {
    private ReceiverMenu receiver;

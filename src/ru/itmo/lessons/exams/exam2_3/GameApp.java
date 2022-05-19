@@ -1,4 +1,4 @@
-package ru.itmo.lessons.exams.exam2_2;
+package ru.itmo.lessons.exams.exam2_3;
 
 public class GameApp {
     public static void main(String[] args) {

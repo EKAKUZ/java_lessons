@@ -1,12 +1,12 @@
-package ru.itmo.lessons.exams.exam2_2.Pattern;
+package ru.itmo.lessons.exams.exam2_3.Pattern;
 
-import ru.itmo.lessons.exams.exam2_2.*;
+import ru.itmo.lessons.exams.exam2_3.*;
 
 import java.io.File;
 import java.util.Scanner;
 
 public class ReceiverMenu {
-    private GameStep gameStep;
+    private final GameStep gameStep;
 
     public ReceiverMenu(GameStep gameStep){
         this.gameStep = gameStep;
@@ -68,14 +68,13 @@ public class ReceiverMenu {
             System.out.println("Состояние игры успешно загружено из файла " + fileName + ".bin");
             System.out.println("-------------------------------------------------");
             gameStep.setStepKey(stepkey);
-
+            gameStep.setGameStarted(true);
             return 2;
         }
         else {
             System.out.println("Состояние игры не удалось загрузить из файла " + fileName + ".bin");
             System.out.println("-------------------------------------------------");
         }
-        gameStep.setGameStarted(true);
         return 1;
     }
     public int exit(){
@@ -100,6 +99,5 @@ public class ReceiverMenu {
     public int step2(){
         gameStep.setStepKey(gameStep.getAllParams()[4]);
         return 2;
-
     }
 }
